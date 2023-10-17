@@ -24,6 +24,8 @@ public class Application {
             if (evFromDB != null) {
                 System.out.println(evFromDB);
             }
+            ed.delete(6);
+            
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
