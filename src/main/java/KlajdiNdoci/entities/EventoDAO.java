@@ -19,5 +19,10 @@ public class EventoDAO {
         System.out.println("Evento salvato correttamente");
     }
 
+    public Evento getById(long id) {
+        return em.find(Evento.class, id);
+
+    }
+
 
 }

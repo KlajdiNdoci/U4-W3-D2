@@ -14,9 +14,19 @@ public class Application {
 
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
-        EventoDAO ed = new EventoDAO(em);
+        try {
+            EventoDAO ed = new EventoDAO(em);
 
-        Evento ev1 = new Evento("Evento1", LocalDate.of(2022, 12, 5), "ciao", TipoEvento.PUBBLICO, 200);
-        ed.save(ev1);
+            Evento ev1 = new Evento("Evento1", LocalDate.of(2022, 12, 5), "ciao", TipoEvento.PUBBLICO, 200);
+            ed.save(ev1);
+
+            Evento evFromDB = ed.getById(5);
+            if (evFromDB != null) {
+                System.out.println(evFromDB);
+            }
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+
     }
 }

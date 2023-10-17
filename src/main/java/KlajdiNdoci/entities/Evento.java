@@ -28,6 +28,10 @@ public class Evento {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
+    public Evento() {
+
+    }
+
     public String getTitolo() {
         return titolo;
     }
