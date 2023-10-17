@@ -25,9 +25,12 @@ public class Application {
                 System.out.println(evFromDB);
             }
             ed.delete(6);
-            
+
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
+        } finally {
+            em.close();
+            emf.close();
         }
 
     }
