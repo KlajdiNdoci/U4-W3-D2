@@ -26,6 +26,14 @@ public class Application {
             }
             ed.delete(6);
 
+            Evento ev7FromDB = ed.getById(7);
+            if (ev7FromDB != null) {
+                ev7FromDB.setTitolo("Evento7");
+                System.out.println(ev7FromDB);
+                em.refresh(ev7FromDB);
+                System.out.println(ev7FromDB);
+            }
+
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         } finally {
